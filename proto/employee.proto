@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package proto;
+
+service employee {
+
+    rpc CreateEmployee (CreateEmployeeReq) returns (CreateEmployeeResp) {}
+    rpc GetEmployeeById (Req) returns (Resp) {}
+    rpc UpdateEmployee (Req) returns (Resp) {}
+    rpc DeleteEmployee (Req) returns (Resp) {}
+}
+
+message UUID {
+   string value = 1;
+}
+
+message CreateEmployeeReq {
+    string name = 1;
+    string second_name = 2;
+    string surname = 3;
+    string hire_date = 4;
+    string position = 5;
+    int64 company_id = 6;
+}
+
+message CreateEmployeeResp {
+     UUID id = 1;
+}
+
+
+message Req {
+    string data = 1;
+}
+
+message Resp {
+    string response = 1;
+}

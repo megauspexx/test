@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package proto;
+
+service company {
+
+    rpc AddCompany (Req) returns (Resp) {}
+    rpc GetCompany (Req) returns (Resp) {}
+    rpc UpdateCompanyWithForm (Req) returns (Resp) {}
+    rpc UpdateCompany (Req) returns (Resp) {}
+    rpc DeleteCompany (Req) returns (Resp) {}
+}
+
+message Req {
+    string data = 1;
+}
+
+message Resp {
+    string response = 1;
+}
